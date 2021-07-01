@@ -1,0 +1,272 @@
+body{
+    overflow: hidden;
+    margin: 0;
+    font-size: 14px;
+}
+
+ *{
+     box-sizing: border-box; /*means border would count within the vh height (internally)*/
+     margin: 0; /* this has given the margin 0 for all classes */
+ }
+
+.container{
+    height: 100vh;
+    margin: 0;
+}
+
+.title-bar{
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #107c41;
+    color: #fff;
+}
+
+.menu-bar {
+    height: 5vh;
+    display: flex;
+    background-color: #107c41;
+    color: white;
+}
+
+.menu-item{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    font-size: 15px;
+}
+
+.menu-item.selected{
+    background-color: white;
+    color: #107c41;
+}
+
+.menu-item:hover {
+    background-color: #0c5e31;
+    cursor: pointer;
+}
+
+.menu-item.selected:hover{
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.menu-icon-bar{
+    height: 6vh;
+    background-color: rgb(241, 241, 241);
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon{
+    padding-top: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon:hover{
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.selector{
+    height: 30px;
+    font-size: 15px;
+}
+
+.font-family-selector{
+    width: 150px;
+}
+
+.color-picker{
+
+}
+
+.formula-bar{
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    background-color: rgb(241, 241, 241);
+}
+
+.formula-editor{
+    height: 70%;
+    border: 1px solid lightgray;
+    background-color: white;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    display: flex;
+    align-items: center;
+}
+
+.selected-cell{
+    width: 120px;
+}
+
+.function-sign{
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formula-input{
+    width: calc(100vw - 160px);
+    outline-color: #107c41;
+}
+
+.data-container {
+    height: 75vh;
+    display: flex;
+    flex-wrap: wrap; /*  very imp property of css */
+    /* instead of column wise flex, flex wrap gives exact same width to each of the div
+       as specified and starts the next div from the next row*/
+}
+
+.select-all{
+    width: 30px;
+    height: 30px;
+    border: 1px solid lightgray;
+}
+
+.column-name-container{
+    width: calc(100vw - 30px);
+    height: 30px;
+    border: 1px solid lightgray;
+    display: flex;
+    overflow: hidden;
+}
+
+.row-name-container{
+    width: 30px;
+    height: calc(75vh - 30px);
+    border: 1px solid lightgray;
+    overflow: hidden;
+    min-height: 25px;
+}
+
+.input-cell-container{
+    width: calc(100vw - 30px);
+    height: calc(75vh - 30px);
+    border: 1px solid lightgray;
+    overflow: scroll;
+}
+
+.column-name{
+    min-width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid lightgray;
+    font-weight: bold;
+}
+
+.row-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    border-bottom: 1px solid lightgray;
+}
+
+.cell-row{
+    display: flex;
+}
+
+.input-cell{
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    padding-left: 2px;
+    padding-right: 2px;
+    min-width: 100px;
+    min-height: 25px;
+    border-bottom: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    outline-color: #107c41;
+}
+
+.input-cell.selected{
+    border: 2px solid #107c41;
+}
+
+.input-cell.top-cell-selected{
+    /* if the top cell is selected, then we will have to remove the to border of 'this' cell
+     */
+    border-top: none;
+}
+
+.input-cell.bottom-cell-selected{
+    /*if bottom cell is selected, then we will have to remove the bottom border of 'this' cell
+     */
+    border-bottom: 1px solid lightgray;
+}
+
+.input-cell.right-cell-selected{
+    border-right: 1px solid lightgray;
+}
+
+.input-cell.left-cell-selected{
+    border-left: none; /*this is because left border was never given to 'this' cell */
+}
+
+.sheet-bar{
+    height: 4vh;
+    display: flex;
+    align-items: center;
+}
+
+.icon-left-scroll, .icon-right-scroll{
+    font-size: 30px;
+}
+
+.icon-left-scroll:hover, .icon-right-scroll:hover{
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.icon-circle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5px;
+    color: #107c41;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 40px;
+}
+
+.icon-circle:hover{
+    cursor: pointer;
+}
+
+.sheet-tab-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+}
+
+.sheet-tab{
+    border-bottom: 4px solid #107c41;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+}
+
+.menu-icon.selected{
+    background-color: lightgray;
+}
